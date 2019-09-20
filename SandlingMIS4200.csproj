@@ -178,6 +178,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\MISContext\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\course.cs" />
     <Compile Include="Models\courseDetail.cs" />
@@ -253,16 +254,16 @@
     <Content Include="Views\students\Details.cshtml" />
     <Content Include="Views\students\Edit.cshtml" />
     <Content Include="Views\students\Index.cshtml" />
-    <Content Include="Views\courses\Create.cshtml" />
-    <Content Include="Views\courses\Delete.cshtml" />
-    <Content Include="Views\courses\Details.cshtml" />
-    <Content Include="Views\courses\Edit.cshtml" />
-    <Content Include="Views\courses\Index.cshtml" />
     <Content Include="Views\instructors\Create.cshtml" />
     <Content Include="Views\instructors\Delete.cshtml" />
     <Content Include="Views\instructors\Details.cshtml" />
     <Content Include="Views\instructors\Edit.cshtml" />
     <Content Include="Views\instructors\Index.cshtml" />
+    <Content Include="Views\courses\Create.cshtml" />
+    <Content Include="Views\courses\Delete.cshtml" />
+    <Content Include="Views\courses\Details.cshtml" />
+    <Content Include="Views\courses\Edit.cshtml" />
+    <Content Include="Views\courses\Index.cshtml" />
     <Content Include="Views\courseDetails\Create.cshtml" />
     <Content Include="Views\courseDetails\Delete.cshtml" />
     <Content Include="Views\courseDetails\Details.cshtml" />

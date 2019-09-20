@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace SandlingMIS4200.Models
 {
     public class student
     {
+        [Key]
         public int studentID { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
@@ -23,7 +25,7 @@ namespace SandlingMIS4200.Models
         // and the local name of the collection will be Course
         // (the object name and the local name do not have to be the same)
 
-        public ICollection<course> course { get; set; } // The I before collection means interface
+        public ICollection<courseDetail> courseDetail { get; set; } // The I before collection means interface
 
 
     }

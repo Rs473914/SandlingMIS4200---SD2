@@ -16,6 +16,6 @@ namespace SandlingMIS4200.Models
         public DateTime instructorSince { get; set; }
 
 
-        public ICollection<courseDetail> courseDetail { get; set; }
+        public ICollection<course> course { get; set; }
     }
 }

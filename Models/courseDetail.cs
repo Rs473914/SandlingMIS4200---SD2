@@ -8,6 +8,7 @@ namespace SandlingMIS4200.Models
     public class courseDetail
     {
         public int coursedetailId { get; set; }
+        public string courseGrade { get; set; }
         public DateTime courseDate { get; set; }
 
         // the next two properties link the orderDetail to the Order
@@ -15,6 +16,9 @@ namespace SandlingMIS4200.Models
         public virtual course course { get; set; }
 
         // the next two properties link the orderDetail to the Product
+        public int studentId { get; set; }
+        public virtual student student { get; set; }
+
         public int instructorId { get; set; }
         public virtual instructor instructor { get; set; }
     }

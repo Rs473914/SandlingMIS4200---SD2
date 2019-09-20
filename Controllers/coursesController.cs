@@ -18,8 +18,7 @@ namespace SandlingMIS4200.Controllers
         // GET: courses
         public ActionResult Index()
         {
-            var courses = db.courses.Include(c => c.student);
-            return View(courses.ToList());
+            return View(db.courses.ToList());
         }
 
         // GET: courses/Details/5
@@ -40,7 +39,6 @@ namespace SandlingMIS4200.Controllers
         // GET: courses/Create
         public ActionResult Create()
         {
-            ViewBag.studentID = new SelectList(db.students, "studentID", "firstName");
             return View();
         }
 
@@ -49,7 +47,7 @@ namespace SandlingMIS4200.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "courseID,courseDescription,creditHours,studentID")] course course)
+        public ActionResult Create([Bind(Include = "courseID,courseName,courseDescription,creditHours")] course course)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +56,6 @@ namespace SandlingMIS4200.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.studentID = new SelectList(db.students, "studentID", "firstName", course.studentID);
             return View(course);
         }
 
@@ -74,7 +71,6 @@ namespace SandlingMIS4200.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.studentID = new SelectList(db.students, "studentID", "firstName", course.studentID);
             return View(course);
         }
 
@@ -83,7 +79,7 @@ namespace SandlingMIS4200.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "courseID,courseDescription,creditHours,studentID")] course course)
+        public ActionResult Edit([Bind(Include = "courseID,courseName,courseDescription,creditHours")] course course)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +87,6 @@ namespace SandlingMIS4200.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.studentID = new SelectList(db.students, "studentID", "firstName", course.studentID);
             return View(course);
         }
 

@@ -8,6 +8,7 @@ namespace SandlingMIS4200.Models
     public class course
     {
         public int courseID { get; set; }
+        public string courseName { get; set; }
         public string courseDescription { get; set; }
         public string creditHours { get; set; }
         
@@ -21,8 +22,5 @@ namespace SandlingMIS4200.Models
         // (the object name and the local name do not have to be the same)
         public ICollection<courseDetail> courseDetail { get; set; } // The I before collection means interface
 
-        public int studentID { get; set; }
-
-        public virtual student student { get; set; }
     }
 }

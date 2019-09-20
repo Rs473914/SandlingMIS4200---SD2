@@ -18,7 +18,7 @@ namespace SandlingMIS4200.Controllers
         // GET: courseDetails
         public ActionResult Index()
         {
-            var courseDetails = db.courseDetails.Include(c => c.course).Include(c => c.instructor);
+            var courseDetails = db.courseDetails.Include(c => c.course).Include(c => c.instructor).Include(c => c.student);
             return View(courseDetails.ToList());
         }
 
@@ -40,8 +40,9 @@ namespace SandlingMIS4200.Controllers
         // GET: courseDetails/Create
         public ActionResult Create()
         {
-            ViewBag.courseID = new SelectList(db.courses, "courseID", "courseDescription");
+            ViewBag.courseID = new SelectList(db.courses, "courseID", "courseName");
             ViewBag.instructorId = new SelectList(db.instructors, "instructorID", "firstName");
+            ViewBag.studentId = new SelectList(db.students, "studentID", "firstName");
             return View();
         }
 
@@ -50,7 +51,7 @@ namespace SandlingMIS4200.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "coursedetailId,courseDate,courseID,instructorId")] courseDetail courseDetail)
+        public ActionResult Create([Bind(Include = "coursedetailId,courseGrade,courseDate,courseID,studentId,instructorId")] courseDetail courseDetail)
         {
             if (ModelState.IsValid)
             {
@@ -59,8 +60,9 @@ namespace SandlingMIS4200.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.courseID = new SelectList(db.courses, "courseID", "courseDescription", courseDetail.courseID);
+            ViewBag.courseID = new SelectList(db.courses, "courseID", "courseName", courseDetail.courseID);
             ViewBag.instructorId = new SelectList(db.instructors, "instructorID", "firstName", courseDetail.instructorId);
+            ViewBag.studentId = new SelectList(db.students, "studentID", "firstName", courseDetail.studentId);
             return View(courseDetail);
         }
 
@@ -76,8 +78,9 @@ namespace SandlingMIS4200.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.courseID = new SelectList(db.courses, "courseID", "courseDescription", courseDetail.courseID);
+            ViewBag.courseID = new SelectList(db.courses, "courseID", "courseName", courseDetail.courseID);
             ViewBag.instructorId = new SelectList(db.instructors, "instructorID", "firstName", courseDetail.instructorId);
+            ViewBag.studentId = new SelectList(db.students, "studentID", "firstName", courseDetail.studentId);
             return View(courseDetail);
         }
 
@@ -86,7 +89,7 @@ namespace SandlingMIS4200.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "coursedetailId,courseDate,courseID,instructorId")] courseDetail courseDetail)
+        public ActionResult Edit([Bind(Include = "coursedetailId,courseGrade,courseDate,courseID,studentId,instructorId")] courseDetail courseDetail)
         {
             if (ModelState.IsValid)
             {
@@ -94,8 +97,9 @@ namespace SandlingMIS4200.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.courseID = new SelectList(db.courses, "courseID", "courseDescription", courseDetail.courseID);
+            ViewBag.courseID = new SelectList(db.courses, "courseID", "courseName", courseDetail.courseID);
             ViewBag.instructorId = new SelectList(db.instructors, "instructorID", "firstName", courseDetail.instructorId);
+            ViewBag.studentId = new SelectList(db.students, "studentID", "firstName", courseDetail.studentId);
             return View(courseDetail);
         }
 
