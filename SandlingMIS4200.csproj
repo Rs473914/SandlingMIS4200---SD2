@@ -168,7 +168,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\courseDetailsController.cs" />
+    <Compile Include="Controllers\coursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\instructorsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\studentsController.cs" />
     <Compile Include="DAL\MIS4200Context.cs" />
@@ -250,6 +253,21 @@
     <Content Include="Views\students\Details.cshtml" />
     <Content Include="Views\students\Edit.cshtml" />
     <Content Include="Views\students\Index.cshtml" />
+    <Content Include="Views\courses\Create.cshtml" />
+    <Content Include="Views\courses\Delete.cshtml" />
+    <Content Include="Views\courses\Details.cshtml" />
+    <Content Include="Views\courses\Edit.cshtml" />
+    <Content Include="Views\courses\Index.cshtml" />
+    <Content Include="Views\instructors\Create.cshtml" />
+    <Content Include="Views\instructors\Delete.cshtml" />
+    <Content Include="Views\instructors\Details.cshtml" />
+    <Content Include="Views\instructors\Edit.cshtml" />
+    <Content Include="Views\instructors\Index.cshtml" />
+    <Content Include="Views\courseDetails\Create.cshtml" />
+    <Content Include="Views\courseDetails\Delete.cshtml" />
+    <Content Include="Views\courseDetails\Details.cshtml" />
+    <Content Include="Views\courseDetails\Edit.cshtml" />
+    <Content Include="Views\courseDetails\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

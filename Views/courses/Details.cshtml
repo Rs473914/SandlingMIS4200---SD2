@@ -1,0 +1,42 @@
+﻿@model SandlingMIS4200.Models.course
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>course</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.student.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.student.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.courseDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.courseDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.creditHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.creditHours)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.courseID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

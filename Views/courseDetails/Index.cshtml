@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SandlingMIS4200.Models.courseDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.course.courseDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.instructor.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.courseDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.course.courseDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.instructor.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.courseDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.coursedetailId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.coursedetailId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.coursedetailId })
+        </td>
+    </tr>
+}
+
+</table>
