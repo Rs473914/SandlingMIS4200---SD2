@@ -16,6 +16,7 @@ namespace SandlingMIS4200.Models
         public string phone { get; set; }
         public string address { get; set; }
         public DateTime studentSince { get; set; }
+        public string fullName { get { return lastName + ", " + firstName; } }
 
         // add any other fields as appropriate
         // a customer can have any number of orders, a 1:M relationship,

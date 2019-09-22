@@ -43,6 +43,7 @@ namespace SandlingMIS4200.Controllers
             ViewBag.courseID = new SelectList(db.courses, "courseID", "courseName");
             ViewBag.instructorId = new SelectList(db.instructors, "instructorID", "firstName");
             ViewBag.studentId = new SelectList(db.students, "studentID", "firstName");
+            ViewBag.ID = new SelectList(db.courseDetails, "ID", "fullName");
             return View();
         }
 
