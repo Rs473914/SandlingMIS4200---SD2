@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -8,8 +9,13 @@ namespace SandlingMIS4200.Models
     public class course
     {
         public int courseID { get; set; }
+        [Display(Name = "Course")]
+        [Required(ErrorMessage = "Please enter a course name")]
         public string courseName { get; set; }
+        [Display(Name = "Description")]
+        [Required(ErrorMessage = "Please enter a course description")]
         public string courseDescription { get; set; }
+        [Display(Name="Credit Hours")]
         public string creditHours { get; set; }
         
 
