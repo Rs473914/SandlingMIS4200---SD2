@@ -29,6 +29,8 @@ namespace SandlingMIS4200.Models
         [Display(Name = "Began Employment")]
         public DateTime instructorSince { get; set; }
 
+        [Display(Name = "Instructor")]
+        public string fullName { get { return lastName + ", " + firstName; } }
 
         public ICollection<course> course { get; set; }
     }

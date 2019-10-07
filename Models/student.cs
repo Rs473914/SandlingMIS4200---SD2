@@ -35,7 +35,9 @@ namespace SandlingMIS4200.Models
         //[DataType(DataType.Date)]
         //[DisplayFormat(DataFormatString ="{0:MM/DD/YYYY", ApplyFormatInEditMode =true)]
         public DateTime studentSince { get; set; }
+        [Display(Name = "Student")]
         public string fullName { get { return lastName + ", " + firstName; } }
+        
 
         // add any other fields as appropriate
         // a customer can have any number of orders, a 1:M relationship,
